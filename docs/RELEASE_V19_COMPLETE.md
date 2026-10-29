@@ -1,8 +1,8 @@
-> Public documentation snapshot, October 28, 2026. Engine source and local gate/rollback files are not published. Results below are recorded development evidence, not new tests run for this upload.
+> Public documentation snapshot, October 29, 2026. Engine source and local gate/rollback files remain private. Results below are recorded development evidence, not tests executed for this publication.
 
 # Project Kujira v19: complete release
 
-**Installed release: 19.8.1, 2026-10-28.** v19 milestones M1 to M4 (parts 19.1 to 19.8) are
+**Installed release: 19.9.1, 2026-10-29** (physical impact debris after 19.9.0; see docs/RELEASE_19_9_1.md and docs/RELEASE_19_9_0.md). v19 milestones M1 to M4 (parts 19.1 to 19.8) are
 gated and installed. 19.9 is reserved for fixes. Save format 37.
 
 This document gathers every v19 change and the engine models behind it. The per-part release
@@ -13,9 +13,9 @@ the later record wins: final receipts beat stage documents, and stage documents 
 |---|---|
 | Project root | `GEgine/` (authoritative gated tree) |
 | Installed executable | `%LOCALAPPDATA%\Programs\ProjectKujira\ProjectKujira.exe` |
-| 19.8.1 SHA-256 | `24D7185D3EC67231523592826B8BB5235EA5A80C9D1730577CF6665FD3878B76` |
-| Final gate | `output/19.8.1/validation-final-20261027231328/` (sealed receipt `gate-passed.json`) |
-| Rollback to 19.8.0 | `checkpoints/19.8.1-before-20261027231328/installed-rollback/` |
+| Installed 19.9.1 SHA-256 | `C0514F98E72FA8126D4D40016F29AD48CEB4591A50BA13AC5456A2650C83CB69` |
+| Final gate | `output/19.9.1/validation-final-20261029164106/` (sealed receipt `gate-passed.json`; post-install verification `receipt-postinstall.log`) |
+| Rollback to 19.9.0 | `checkpoints/19.9.1-before-20261029135225/installed-rollback/` |
 | Toolchain | Zig 0.17.0-dev.2085, SDL2, OpenGL 3.3, REBOUND 5.2.2 (vendored, commit c3413471) |
 | Player saves | `%LOCALAPPDATA%\ProjectKujira` (never opened by development or gates) |
 
@@ -85,6 +85,8 @@ What v19 holds to:
 | 19.6.5 | 10-27 | Curved subsurface impact-heat colour field on both raster paths. M3 complete. | 37 |
 | 19.8.0 | 10-27 | M3 review fix (charge-separation root). Swept REBOUND contact guard. Deterministic parallel radiation and long-time thermal owners. 19.7 combined million-year case. 19.8 performance report. | 37 |
 | 19.8.1 | 10-28 | Exact threading of molten-heavy ticks: persistent worker pool, shared pair-potential helper, parallel packet potentials and field light. M4 complete. | 37 |
+| 19.9.0 | 10-28 | Fixes: directional bounded impact debris from the contact seam, planetary venting as vapour packets, thin vapour and cloud display, Roche check. | 37 |
+| 19.9.1 | 10-29 | Physical impact debris: power-law sizes in mass-kept factor-two bins, an entity budget from free slots, one energy-based speed law per impact, escape only when paid (recoil chips too). | 37 |
 
 Plans that were not built as written:
 
@@ -185,6 +187,14 @@ $$\mathbf a=-GM\frac{\mathbf r}{(r^2+\epsilon^2)^{3/2}},\qquad
   queue packet-only ejecta when chip resolution fails. The curtain is symmetric about the
   impact axis, so recoils cancel. Launch stays under 0.98 of escape speed including donor
   recoil. Unspent work stays with the donor.
+- **Physical debris (19.9.1, supersedes the 0.98 ceiling).** Curtain pieces are a
+  mass-weighted sample of the same tail in factor-two bins (mass kept bin by bin, pieces from
+  2 km), at most 8, 6, 4, 2, 1 or 0 per donor event as the body table fills. One speed law per
+  impact, `v = v_ref (d/d_max)^-1/3` with a seeded 0.8-1.25 scatter, takes v_ref from the 0.20
+  kinetic share spread over the whole affordable tail and never exceeds the collision speed.
+  Recoil chips split their planned mass by the tail. A piece escapes only when its launch was
+  paid: the 0.98 cap, the v16.4 unbound-chip rejection and the v16.2 four-radius chip ceiling
+  are lifted, and gravity decides fallback, orbit or escape.
 - **Unified solids (19.6.4).** Every independent solid occupies a main-body slot. Births are
   refused before any donor mutation if unfunded, undersized, overlapping or unplaceable.
 

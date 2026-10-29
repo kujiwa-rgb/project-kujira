@@ -8,14 +8,16 @@ This is the public **documentation and future distribution repository**. **Game 
 
 ## Current release: v19 complete
 
-**19.8.1 is reported installed in the development environment; v19 milestones M1-M4 are complete.** Current save format: **37**.
+**19.9.1 is installed in the development environment; v19 milestones M1-M4 and the 19.9 fixes are complete.** Current save format: **37**.
 
 **[Download the new PDF: Universal Topology V, completed v19](UNIVERSAL_TOPOLOGY_V5_v19.pdf?raw=1)**
 
-[View the PDF on GitHub](UNIVERSAL_TOPOLOGY_V5_v19.pdf). This 36-page illustrated reference covers the engine models and equations, milestone history, thermal and material accounting, Stellar Time and REBOUND, surfaces and controls, exact parallel work, measured results and declared limits.
+[View the PDF on GitHub](UNIVERSAL_TOPOLOGY_V5_v19.pdf). This 40-page illustrated reference covers the engine models and equations, milestone history, thermal and material accounting, Stellar Time and REBOUND, surfaces and controls, exact parallel work, measured results and declared limits.
 
 - [Current development status and publication scope](docs/DEVELOPMENT_STATUS_V19.md)
 - [Complete v19 release document](docs/RELEASE_V19_COMPLETE.md)
+- [19.9.1 physical impact debris and installed closeout](docs/RELEASE_19_9_1.md)
+- [19.9.0 vapour, clouds and directional debris](docs/RELEASE_19_9_0.md)
 - [19.8.0 release record](docs/RELEASE_19_8_0.md)
 - [19.8.1 exact-threading release record](docs/RELEASE_19_8_1.md)
 - [Historical 52-page atlas: Universal Topology IV, v16.3.1](UNIVERSAL_TOPOLOGY_V4_16.3.1.pdf)
@@ -25,7 +27,7 @@ This is the public **documentation and future distribution repository**. **Game 
 | Project name | Project Kujira (working title) |
 | Category | PC video game / universe-simulation sandbox |
 | Technology | Zig; custom game and simulation engine; SDL2 / OpenGL; linked REBOUND for qualified long-time motion |
-| Documented development snapshot | 19.8.1; v19 M1-M4 complete; save format 37 |
+| Documented development snapshot | Installed 19.9.1; v19 complete; save format 37 |
 | Public download | Illustrated v19 PDF, historical atlas and release/development documentation |
 | Installable game | Development installation reported locally; no public installer or executable included here |
 | Game and engine source | Private; not published in this repository |
@@ -46,7 +48,7 @@ The engine combines physical relationships with explicit numerical and gameplay 
 
 ## Development and release direction
 
-The current documented development release is 19.8.1, with v19 complete. A gated local development installation is not a public distribution package. Release timing, system requirements and packaging for a public installable game will be announced separately; this update includes no installer.
+The current documented development release is installed 19.9.1, with v19 complete. A gated local development installation is not a public distribution package. Release timing, system requirements and packaging for a public installable game will be announced separately; this update includes no installer.
 
 Future updates may include revised atlases, development notes and downloadable game packages. This repository is not a commitment to publish the game's source code.
 

@@ -1,51 +1,63 @@
 # Project Kujira: current development stage
 
-As of **October 28, 2026**. Public documentation update only.
+As of **October 29, 2026**. Public documentation update only.
 
-## Release position
+## Installed release
 
-- **19.8.1** is reported installed and v19 milestones **M1-M4** are complete.
-- Save format **37**; the v19 release history covers formats 26-37.
-- The recorded installed executable SHA-256 is `24D7185D3EC67231523592826B8BB5235EA5A80C9D1730577CF6665FD3878B76`.
-- The recorded final gate is `19.8.1/validation-final-20261027231328`.
-- The guard sealed the receipt and authorized installation; installed integrity was reported passing. These are existing development records, not newly run checks.
-- A rollback copy of 19.8.0 is retained locally. No rollback files are published here.
+- **19.9.1** is installed; v19 milestones **M1-M4** and the 19.9 corrective releases are complete.
+- Save format **37**; v19 history covers formats 26-37.
+- Installed executable SHA-256: `C0514F98E72FA8126D4D40016F29AD48CEB4591A50BA13AC5456A2650C83CB69`.
+- Final gate: `output/19.9.1/validation-final-20261029164106/`.
+- Installed October 29 at **17:35 CDT**. The receipt was sealed and verified before copying, then verified after installation. Installed integrity returned **0**; executable, SDL2 and symbols match the receipt.
+- Local rollback to **19.9.0**: `checkpoints/19.9.1-before-20261029135225/installed-rollback/`. Rollback files are not published.
 
-## What v19 established
+These are recorded development results. No engine test, build or installation was performed for this documentation update.
 
-Persistent planetary surface/history records; progressive raster refinement; Tab focus locking and triangle-centered steering; shared physical-solid ownership and hard contacts; conservative funded products; thermal/phase and atmospheric accounting; local entry/impact heat and tapered subsurface presentation; charge inventories and gas-only lightning; the inherited magnetosphere proxy; finite-source lighting; and a coarse, resumable Stellar Time path with analytic and linked REBOUND motion.
+## What changed in the closeout
 
-The physical capacities remain distinct: **1,024 shared main-body slots**, **512 gas/material packets**, and **64 bins with up to four gas/material modes**. The retired independent 256-solid allocator is not the current architecture. All independently positioned solid products use the shared body pool.
+**19.9.0:** directional debris placement at the contact seam; thermal planetary vents in gas packets rather than star-like gas bodies; unified vapour/cloud gas-layer rendering; pale-blue vapour and ice. The final candidate includes the full-table vent regression: packet capacity, not main-body space, governs ordinary vent admission.
 
-New physical solid pieces must be at least **1 km in diameter**, funded from their actual retained volume. A separate, owner-approved existing sub-1-km cleanup can remove owned material and energy; this narrow gameplay exception is not conservative vaporization.
+**19.9.1:** unequal fragment sizes from a power-law tail, mass-budgeted logarithmic bins, a bounded entity budget and impact-derived size-dependent speeds. Eligible recoil chips can escape when the launch is paid; they no longer receive the old four-radius limit. Belt insertion windows and other retained legacy rules remain explicit.
 
-## Recorded qualification and performance
+These corrections retain the v19 foundation: persistent surfaces and history, Tab locking and triangle-centered steering, hard solid contacts, thermal and atmospheric accounting, local heat presentation, charge and gas-only lightning, finite-source lighting, and resumable coarse Stellar Time with analytic and linked REBOUND motion.
 
-- Full Debug: **51/51 steps**, **1,383/1,388 tests passing**, **5 skipped**.
-- Rendering: **1,238/1,239 passing**, **1 skipped**.
-- Fresh completion acceptance: **9/9**; actual Debug and ReleaseSafe engine builds passed.
-- Full-pool million-year-plus-2.5-second skip: **2.1842 seconds**, 14 accepted windows, zero retries, exact requested endpoint.
-- Combined million-year case: **3.3727 seconds**, 15 accepted windows, one merger, seven events and zero unresolved events.
-- Final molten full-pool benchmark: approximately **1,510.99 ms** per tick with one worker versus **336.66 ms** with eight workers, about **4.49x** for that measured scene.
-- Full-pool rendered-frame p95 remained approximately **179-191 ms**, within the recorded **250-ms stress budget**. This is not a universal 60-FPS guarantee.
+## Capacity and minimum-size rules
 
-Different benchmark scenes and metric types are not interchangeable. Skipped tests are not passes. Reported one/eight-worker agreement applies to the recorded fixtures; it is not a proof for every possible scene or future thread schedule.
+- **1,024 shared main-body slots** include all independently positioned solids.
+- **512 gas/material packets** and **64 bins with up to four gas/material modes** remain separate. The old 256-solid allocator is retired.
+- New physical solids remain at least **1 km in diameter**, funded from actual volume. The curtain sampler uses a **2-km draw floor** as a contraction margin, not a new physical minimum. Undrawn material stays with its donor.
+- Existing sub-1-km cleanup can remove owned material and energy. This approved gameplay exception is not conservative vaporization; hot small fragments make it more visible.
 
-## Explicit boundaries
+## Gate evidence and conditions
 
-The engine is a game simulation, not a calibrated astrophysical research solver. Long skips deliberately approximate quiet evolution and encounter history; they do not replay every local weather effect or numerical orbit. Packet/bin mutual gravity, the simplified atmosphere, entry-heating proxy and presentation-estimated subsurface heat depth have declared limits.
+- Full Debug: **51/51 steps succeeded**. Twenty test programs reused cached passes from byte-identical frozen source.
+- The preceding full suite recorded **1,353 passing tests** and a runner timeout in the coherent/hard-solids program. That failed run is not represented as a passing suite. The same program executed fresh in the final gate and passed **33/33**.
+- Focused 19.9 physics: **17/17**. Rendering: **1,241/1,243 passed, 2 skipped**.
+- Fresh linked-REBOUND completion: **9/9**. Full-pool million years plus 2.5 seconds: **2.2797 s**; combined million-year case: **3.3997 s**, with exact requested endpoints.
+- Debug and ReleaseSafe build commands succeeded using unchanged cached compile artifacts.
+- The recorded gate ran at affinity **FFFF**, the 16 performance-core threads of the **i7-14700F**, without competing development work.
 
-The release retains specific documented comparison exceptions. Those exceptions do not increase general conservation tolerances or turn every original failed assertion into a passing result. See the complete release document and PDF for the exact scope.
+Copied reuse evidence remains labelled and linked to the exact candidate. Skips are not passes, and cached execution is not described as fresh.
 
-## Read the current references
+## Performance is scene-specific
 
-- [Illustrated v19 engine reference](../UNIVERSAL_TOPOLOGY_V5_v19.pdf)
+- BH+300 replay worst play frame: **81.6 ms**, under its **250-ms** limit; the recorded 19.9.0 comparison was 91.1 ms.
+- Full-pool **render-only**, with physics paused: approximately **154.9-166.0 ms p95**, under its **250-ms** stress limit.
+- Active `planet-gameplay-256`: **371.3 ms p95**, against its separate **375-ms** limit.
+- Molten full-pool mean physics tick: **1,510.96 ms** with one worker versus **327.01 ms** with eight, about **4.62x** for that scene.
+
+These measurements are not interchangeable and do not promise universal 60-FPS gameplay. Quiet analytic long-time windows, simplified atmospheres, entry heating and subsurface depth presentation retain their documented approximation limits. Specific prior comparison exceptions do not relax general conservation requirements.
+
+## References
+
+- [Updated 40-page illustrated engine reference](../UNIVERSAL_TOPOLOGY_V5_v19.pdf)
 - [Complete v19 release](RELEASE_V19_COMPLETE.md)
-- [19.8.0 review and acceleration](RELEASE_19_8_0.md)
-- [19.8.1 exact threading](RELEASE_19_8_1.md)
+- [19.9.1 debris and installed closeout](RELEASE_19_9_1.md)
+- [19.9.0 corrective release](RELEASE_19_9_0.md)
+- [19.8.1 exact-threading history](RELEASE_19_8_1.md)
 
 ## Publication scope
 
-This repository remains **documentation-only**. No engine/game source, executable, installer, player save, compiler cache, temporary test world, raw gate bundle or rollback checkpoint is included. Source paths and local gate identifiers appearing in the release notes identify private development records; their presence does not publish those files.
+This repository remains **documentation-only**. Engine/game source, executables, installers, player saves, compiler caches, temporary test worlds, raw gate bundles and rollback checkpoints remain private. References to private source paths and local gate records do not publish their contents.
 
-The existing [licensing and publication scope](../LICENSING.md) remains in force. This update does not apply a new software or documentation license. No new engine tests or builds were run to publish this snapshot.
+The existing [licensing and publication scope](../LICENSING.md) remains in force. No license change is made.
