@@ -6,20 +6,19 @@ Project Kujira is an open-world, rasterized, pixelated 2D universe under active 
 
 This is the public **documentation and future distribution repository**. **Game and engine source code are not published here.**
 
-## Current release: v19 complete
+## Current release: v20.0
 
-**19.9.1 is installed in the development environment; v19 milestones M1-M4 and the 19.9 fixes are complete.** Current save format: **37**.
+**20.0.4 is installed in the development environment; v20.0 (the 0.1 m floor) and its four owner-tested corrections are complete.** Current save format: **40**.
 
-**[Download the new PDF: Universal Topology V, completed v19](UNIVERSAL_TOPOLOGY_V5_v19.pdf?raw=1)**
+**[Download the v20.0 PDF: Release Reference](PROJECT_KUJIRA_V20_0_Reference.pdf?raw=1)**
 
-[View the PDF on GitHub](UNIVERSAL_TOPOLOGY_V5_v19.pdf). This 40-page illustrated reference covers the engine models and equations, milestone history, thermal and material accounting, Stellar Time and REBOUND, surfaces and controls, exact parallel work, measured results and declared limits.
+[View the PDF on GitHub](PROJECT_KUJIRA_V20_0_Reference.pdf). This 21-page reference covers the 0.1 m size floor for solids and gas, zoom to 0.1 m per pixel, the locked observer (the true 10 km triangle, free cursor and panning, zoom at the cursor, the 20 km leash, the planet held still inside its green boundary), the observer's math model, gate results and declared limits.
 
-- [Current development status and publication scope](docs/DEVELOPMENT_STATUS_V19.md)
-- [Complete v19 release document](docs/RELEASE_V19_COMPLETE.md)
-- [19.9.1 physical impact debris and installed closeout](docs/RELEASE_19_9_1.md)
-- [19.9.0 vapour, clouds and directional debris](docs/RELEASE_19_9_0.md)
-- [19.8.0 release record](docs/RELEASE_19_8_0.md)
-- [19.8.1 exact-threading release record](docs/RELEASE_19_8_1.md)
+- [Current development status (v20.0)](docs/DEVELOPMENT_STATUS_V20.md)
+- [20.0.0: the 0.1 m floor, zoom to 0.1 m per pixel](docs/RELEASE_20_0_0.md)
+- [20.0.1](docs/RELEASE_20_0_1.md), [20.0.2](docs/RELEASE_20_0_2.md), [20.0.3](docs/RELEASE_20_0_3.md), [20.0.4](docs/RELEASE_20_0_4.md): the observer at deep zoom
+- [The locked observer model](docs/V20_0_3_OBSERVER_MODEL.md)
+- [Previous release: Universal Topology V, completed v19](UNIVERSAL_TOPOLOGY_V5_v19.pdf) and its [status](docs/DEVELOPMENT_STATUS_V19.md) and [release document](docs/RELEASE_V19_COMPLETE.md)
 - [Historical 52-page atlas: Universal Topology IV, v16.3.1](UNIVERSAL_TOPOLOGY_V4_16.3.1.pdf)
 
 | Item | Current publication |
@@ -27,8 +26,8 @@ This is the public **documentation and future distribution repository**. **Game 
 | Project name | Project Kujira (working title) |
 | Category | PC video game / universe-simulation sandbox |
 | Technology | Zig; custom game and simulation engine; SDL2 / OpenGL; linked REBOUND for qualified long-time motion |
-| Documented development snapshot | Installed 19.9.1; v19 complete; save format 37 |
-| Public download | Illustrated v19 PDF, historical atlas and release/development documentation |
+| Documented development snapshot | Installed 20.0.4; v20.0 complete; save format 40 |
+| Public download | v20.0 Release Reference PDF, the v19 illustrated reference, historical atlas and release/development documentation |
 | Installable game | Development installation reported locally; no public installer or executable included here |
 | Game and engine source | Private; not published in this repository |
 
@@ -48,7 +47,7 @@ The engine combines physical relationships with explicit numerical and gameplay 
 
 ## Development and release direction
 
-The current documented development release is installed 19.9.1, with v19 complete. A gated local development installation is not a public distribution package. Release timing, system requirements and packaging for a public installable game will be announced separately; this update includes no installer.
+The current documented development release is installed 20.0.4, with v20.0 complete. A gated local development installation is not a public distribution package. Release timing, system requirements and packaging for a public installable game will be announced separately; this update includes no installer.
 
 Future updates may include revised atlases, development notes and downloadable game packages. This repository is not a commitment to publish the game's source code.
 
